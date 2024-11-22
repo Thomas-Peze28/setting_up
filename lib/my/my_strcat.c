@@ -16,6 +16,5 @@ char *my_strcat(char *dest, char const *src)
         dest[dest_len + count] = src[count];
     }
     dest[dest_len + count] = '\0';
-
     return dest;
 }

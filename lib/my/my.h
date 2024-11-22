@@ -12,6 +12,16 @@
 #ifndef MY_
     #define MY_
 
+typedef struct {
+    int nb_rows;
+    int nb_cols;
+    char **map;
+    char **map_replace;
+    int square_size;
+    int square_pos_x;
+    int square_pos_y;
+} map_info_t;
+
 void my_putchar(char c);
 int my_isneg(int nb);
 int my_put_nbr(int nb);
@@ -47,7 +57,6 @@ int check_lettre(const char *str, int i);
 int check_number(const char *str, int i);
 int my_getsign(char const *str);
 int my_putnbr_base(int nbr, char const *base);
-int mini_printf(const char *format, ...);
 int my_put_long(unsigned long int nb);
 int my_put_unsigned(long int nb);
 int my_putnbr_sc(double n, long pre);
@@ -59,11 +68,14 @@ int my_put_float(double n, int pre);
 int my_printf(const char *format, ...);
 char **mem_alloc_2d_array(int nb_rows, int nb_cols);
 char *load_file_in_mem(char const *filepath);
-char **load_2d_arr_from_file(char const *filepath, int nb_rows, int nb_cols);
-int is_square_of_size(char **map, int row, int col, int square_size, int nb_rows, int nb_cols);
-int find_biggest_square(char **map, int row, int col, int nb_rows, int nb_cols);
-int *find_biggest_square_of_map(char **map, int nb_rows, int nb_cols, int row, int col);
-char **replace_square(char **map, int *info_map, int *map_size);
+char **load_2d_arr_from_file(char const *filepath, map_info_t map_info);
+int is_square_of_size(map_info_t map_info, int row, int col, int square_size);
+int find_biggest_square(map_info_t map_info, int row, int col);
+int *find_biggest_square_of_map(map_info_t map_info, int row, int col);
+char **replace_square(map_info_t map_info);
 int *return_raws_cols(char const *filepath);
+char **mem_dup_2d_array(char **arr, int nb_rows, int nb_cols);
+int return_raws(char const *filepath);
+int return_cols(char const *filepath);
 
 #endif /* MY_ */

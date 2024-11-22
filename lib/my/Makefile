@@ -33,7 +33,6 @@ SRC	=	my_compute_power_rec.c	\
 		my_swap.c	\
 		my_getsign.c    \
 		my_putnbr_base.c	\
-		mini_printf.c	\
 		my_put_float.c	\
 		my_put_long.c	\
 		my_put_unsigned.c	\
@@ -41,6 +40,12 @@ SRC	=	my_compute_power_rec.c	\
 		my_putnbr_sc.c	\
 		my_round.c	\
 		my_printf.c		\
+		mem_alloc_2d_array.c	\
+		mem_dup_2d_array.c	\
+		load_2d_arr_from_file.c	\
+		return_file_lenght.c	\
+		return_map_dim.c	\
+
 
 OBJ	=	$(SRC:.c=.o)
 
