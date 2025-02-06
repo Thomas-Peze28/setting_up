@@ -5,6 +5,7 @@
 ** return file lenght
 */
 #include "my.h"
+#include "setting_up.h"
 
 int return_file_lenght(char const *filepath)
 {

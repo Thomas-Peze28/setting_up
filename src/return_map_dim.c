@@ -5,15 +5,16 @@
 ** bootstrap setting_up
 */
 #include "my.h"
+#include "setting_up.h"
 
 int return_raws(char const *filepath)
 {
     int fd = open(filepath, O_RDONLY);
-    char buffer[1];
-    int raws = 1;
+    char buffer = '\0';
+    int raws = 0;
 
-    while (read(fd, buffer, 1) > 0) {
-        if (buffer[0] == '\n') {
+    while (read(fd, &buffer, 1) > 0) {
+        if (buffer == '\n') {
             raws++;
         }
     }
@@ -24,15 +25,15 @@ int return_raws(char const *filepath)
 int return_cols(char const *filepath)
 {
     int fd = open(filepath, O_RDONLY);
-    char buffer[1];
+    char buffer = '\0';
     int cols = 0;
     int raw = 1;
 
-    while (read(fd, buffer, 1) > 0) {
-        if (buffer[0] == '\n') {
+    while (read(fd, &buffer, 1) > 0) {
+        if (buffer == '\n') {
             raw++;
         }
-        if (raw == 2 && buffer[0] != '\n') {
+        if (raw == 2 && buffer != '\n') {
             cols++;
         }
     }

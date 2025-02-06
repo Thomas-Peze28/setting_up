@@ -5,14 +5,19 @@
 ## makfile
 ##
 
-SRC	=	main.c	\
-		setting_up.c	\
+SRC	=	src/main.c	\
+		src/setting_up.c	\
+		src/mem_alloc_2d_array.c	\
+		src/mem_dup_2d_array.c	\
+		src/load_2d_arr_from_file.c	\
+		src/return_file_lenght.c	\
+		src/return_map_dim.c	\
 
 NAME	=	setting_up
 
 OBJ	=	$(SRC:.c=.o)
 
-CFLAGS = -I./include -L./lib/my -lmy -Wall -Wextra -Werror
+CFLAGS += -I./include/ -L./lib/my -lmy -Wall -Wextra
 
 all: build_lib $(OBJ)
 	gcc -o $(NAME) $(OBJ) $(CFLAGS)
