@@ -9,12 +9,23 @@
 
 int my_str_isalpha(char const *str)
 {
-    for (int count = 0; count <= my_strlen(str); count++) {
-        if ((str[count] < 'a' && str[count] > 'z' && str[count] != ' ') ||
-        (str[count] < 'A' && str[count] > 'Z' && str[count] != ' ')) {
+    for (int count = 0; str[count] != '\0'; count++) {
+        if (!((str[count] >= 'a' && str[count] <= 'z') ||
+              (str[count] >= 'A' && str[count] <= 'Z') ||
+              str[count] == ' ')) {
             return 0;
-    } else {
-        return 1;
+        }
     }
+    return 1;
+}
+
+int my_str_have_alpha(char const *str)
+{
+    for (int i = 0; str[i] != '\0'; i++) {
+        if ((str[i] >= 'a' && str[i] <= 'z' ) ||
+            str[i] >= 'A' && str[i] <= 'Z') {
+                return 0;
+            }
     }
+    return 1;
 }

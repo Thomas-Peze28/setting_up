@@ -58,5 +58,6 @@ int my_put_float(double n, int pre);
 int my_printf(const char *format, ...);
 char **my_str_to_word_array02(char const *str, char separator);
 int my_atoi(const char *str);
+int my_str_have_alpha(char const *str);
 
 #endif /* MY_ */

@@ -41,11 +41,24 @@ char **create_map(int size, char *patern)
     return map;
 }
 
+int error_handling(int ac, char **av)
+{
+    if (ac == 3) {
+        if (my_str_have_alpha(av[1]) == 0)
+            return 84;
+        if (my_strlen(av[2]) == 0)
+            return 84;
+    }
+    return 0;
+}
+
 int main(int ac, char **av)
 {
     map_info_t map_info;
 
     if (ac == 1)
+        return 84;
+    if (error_handling(ac, av) == 84)
         return 84;
     if (ac == 2) {
         map_info.nb_rows = return_raws(av[1]);
