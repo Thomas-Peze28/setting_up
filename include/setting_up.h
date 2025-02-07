@@ -29,5 +29,7 @@ int *return_raws_cols(char const *filepath);
 char **mem_dup_2d_array(char **arr, int nb_rows, int nb_cols);
 int return_raws(char const *filepath);
 int return_cols(char const *filepath);
+char **create_map(int size, char *patern);
+void print_map(char **map);
 
 #endif /* SETTING_ */

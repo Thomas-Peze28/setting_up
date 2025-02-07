@@ -12,6 +12,7 @@ SRC	=	src/main.c	\
 		src/load_2d_arr_from_file.c	\
 		src/return_file_lenght.c	\
 		src/return_map_dim.c	\
+		src/create_map.c	\
 
 NAME	=	setting_up
 
