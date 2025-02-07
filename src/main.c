@@ -31,6 +31,15 @@ int error_handling(int ac, char **av)
     return 0;
 }
 
+int error_handling_map(int ac, char **av)
+{
+    if (ac == 2) {
+        if (open(av[1], O_RDONLY) != 0)
+        return 84;
+    }
+    return 0;
+}
+
 int main(int ac, char **av)
 {
     map_info_t map_info;
@@ -46,6 +55,8 @@ int main(int ac, char **av)
         map_info.nb_cols = my_atoi(av[1]);
         map_info.map = create_map(my_atoi(av[1]), av[2]);
     }
+    if (error_handling_map(ac, av) == 84)
+        return 84;
     find_biggest_square_of_map(&map_info, 0, 0);
     map_info.map_replace = replace_square(map_info);
     print_map(map_info.map_replace);
