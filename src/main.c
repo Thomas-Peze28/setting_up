@@ -34,7 +34,7 @@ int error_handling(int ac, char **av)
 int error_handling_map(int ac, char **av)
 {
     if (ac == 2) {
-        if (open(av[1], O_RDONLY) != 0)
+        if (open(av[1], O_RDONLY) == -1)
         return 84;
     }
     return 0;
